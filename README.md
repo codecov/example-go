@@ -56,6 +56,19 @@ test:
 > ### Start testing with [Circle CI](https://circleci.com/)
 
 
+### `(optional)` using [gocov](https://github.com/axw/gocov)
+> We support uploading xml reports too, via this method below
+
+```
+install:
+  - sudo pip install codecov
+  - go get github.com/axw/gocov/gocov/...
+  - go get github.com/AlekSi/gocov-xml
+script:
+  - gocov test github.com/your/project | gocov-xml > coverage.xml
+after_success:
+  - codecov
+```
 
 
 [1]: https://codecov.io/
