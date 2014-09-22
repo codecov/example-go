@@ -25,7 +25,7 @@ codecov --min-coverage=75
 > Append to your `.travis.yml`
 
 ```yml
-install:
+before_install:
     sudo pip install codecov
 after_success:
     codecov
