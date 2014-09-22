@@ -1,4 +1,4 @@
-package awesome
+package example
 
 import "github.com/codecov/example-go/awesome"
 
