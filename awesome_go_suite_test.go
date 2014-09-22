@@ -1,6 +1,7 @@
 package awesome
 
 import (
+    . "github.com/onsi/ginkgo"
     "os"
     "testing"
     "github.com/onsi/ginkgo/reporters"
