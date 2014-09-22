@@ -1,4 +1,4 @@
-package awesomeness
+package awesome
 
 func Smile() string {
     return ":)"
