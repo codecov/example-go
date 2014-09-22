@@ -14,4 +14,5 @@ script:
   - go test -coverprofile=coverage.txt -covermode=count
 
 after_success: 
-    - codecov
+  - cat coverage.txt
+  - codecov
