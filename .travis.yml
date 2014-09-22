@@ -4,7 +4,7 @@ go:
   - 1.2
 
 before_install:
-  - sudo pip install git+git://github.com/codecov/codecov-python.git@go#egg=codecov
+  - sudo pip install codecov
   - go get github.com/onsi/gomega
   - go get github.com/onsi/ginkgo
   - go get code.google.com/p/go.tools/cmd/cover
@@ -13,5 +13,4 @@ script:
   - go test -coverprofile=coverage.txt -covermode=count
 
 after_success:
-  - cat coverage.txt
   - codecov
