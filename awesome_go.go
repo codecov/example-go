@@ -1,6 +1,6 @@
 package awesome
 
-import "github.com/codecov/example-go/awesomeness"
+import "github.com/codecov/example-go/awesome"
 
 var result string
 
