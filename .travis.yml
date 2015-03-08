@@ -11,8 +11,6 @@ before_install:
 
 script:
   - go test -coverprofile=coverage.txt -covermode=atomic
-  - ls -al
-  - cat coverage.txt
 
 after_success:
   - codecov
