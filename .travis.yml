@@ -10,7 +10,9 @@ before_install:
   - go get code.google.com/p/go.tools/cmd/cover
 
 script:
-  - go test -coverprofile=coverage.txt -covermode=count
+  - go test -coverprofile=coverage.txt -covermode=atomic
+  - ls -al
+  - cat coverage.txt
 
 after_success:
   - codecov
