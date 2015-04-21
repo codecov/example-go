@@ -33,8 +33,6 @@ after_success:
 
 Add to your `.travis.yml` file.
 ```yml
-language:
-  go
 env:
   global:
     - CODECOV_TOKEN=:uuid-repo-token
