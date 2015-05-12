@@ -42,7 +42,7 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
 ```
 
-## Caveat: Multiple fiels 
+## Caveat: Multiple files 
 > If you see this `cannot use test profile flag with multiple packages` then use this shell template to execute your tests and store coverage output
 
 ```shell
