@@ -45,7 +45,7 @@ after_success:
 ## Caveat: Multiple fiels 
 > If you see this `cannot use test profile flag with multiple packages` then use this shell template to execute your tests and store coverage output
 
-```
+```shell
 #!/usr/bin/env bash
 
 set -e
@@ -62,6 +62,9 @@ for d in $(find ./* -maxdepth 10 -type d); do
     fi
 done
 ```
+
+Then run this file as your test (ex. `./test.sh`)
+
 > Reference http://stackoverflow.com/a/21142256/2055281
 
 
