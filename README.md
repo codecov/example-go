@@ -6,6 +6,8 @@ Codecov Go Example
 
 This repository serves as an **example** on how to use [Codecov Global][4] for Go.
 
+> Note: use `-covermode=atomic` or `-covermode=count` to show how many times a statement was exected.
+
 # Travis CI
 
 Add to your `.travis.yml` file.
