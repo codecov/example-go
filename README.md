@@ -1,6 +1,8 @@
 Codecov Go Example
 ==================
 
+[![Join the chat at https://gitter.im/codecov/example-go](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/codecov/example-go?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 | [https://codecov.io][1] | [@codecov][2] | [hello@codecov.io][3] |
 | ----------------------- | ------------- | --------------------- |
 
