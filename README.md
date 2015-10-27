@@ -6,6 +6,8 @@ Codecov Go Example
 
 This repository serves as an **example** on how to use [Codecov Global][4] for Go.
 
+> Note: use `-covermode=atomic` or `-covermode=count` to show how many times a statement was exected.
+
 # Travis CI
 
 Add to your `.travis.yml` file.
@@ -41,6 +43,31 @@ env:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 ```
+
+## Caveat: Multiple files 
+> If you see this `cannot use test profile flag with multiple packages` then use this shell template to execute your tests and store coverage output
+
+```shell
+#!/usr/bin/env bash
+
+set -e
+echo "" > coverage.txt
+
+for d in $(find ./* -maxdepth 10 -type d); do
+    if ls $d/*.go &> /dev/null; then
+        go test -coverprofile=profile.out -covermode=atomic $d
+        if [ -f profile.out ]; then
+            cat profile.out >> coverage.txt
+            rm profile.out
+        fi
+    fi
+done
+```
+
+Then run this file as your test (ex. `./test.sh`)
+
+> Reference http://stackoverflow.com/a/21142256/2055281
+
 
 View source and learn more about [Codecov Global Uploader][4]
 
