@@ -15,12 +15,12 @@ Add to your `.travis.yml` file.
 language: go
 
 go:
-  - 1.2
+  - 1.6
 
 before_install:
   - go get github.com/onsi/gomega
   - go get github.com/onsi/ginkgo
-  - go get code.google.com/p/go.tools/cmd/cover
+  - go get golang.org/x/tools/cmd/cover
 
 script:
   - go test -coverprofile=coverage.txt -covermode=atomic
@@ -44,7 +44,7 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
 ```
 
-## Caveat: Multiple files 
+## Caveat: Multiple files
 > If you see this `cannot use test profile flag with multiple packages` then use this shell template to execute your tests and store coverage output
 
 ```shell
