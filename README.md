@@ -18,9 +18,7 @@ go:
   - 1.6
 
 before_install:
-  - go get github.com/onsi/gomega
-  - go get github.com/onsi/ginkgo
-  - go get golang.org/x/tools/cmd/cover
+  go get -t -v ./...
 
 script:
   - go test -coverprofile=coverage.txt -covermode=atomic
