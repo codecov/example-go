@@ -18,7 +18,7 @@ go:
   - 1.6
 
 before_install:
-  go get -t -v ./...
+  - go get -t -v ./...
 
 script:
   - go test -coverprofile=coverage.txt -covermode=atomic
