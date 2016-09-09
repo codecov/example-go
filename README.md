@@ -15,13 +15,13 @@ Add to your `.travis.yml` file.
 language: go
 
 go:
-  - 1.6
+  - 1.7
 
 before_install:
   - go get -t -v ./...
 
 script:
-  - go test -coverprofile=coverage.txt -covermode=atomic
+  - go test -race -coverprofile=coverage.txt -covermode=atomic
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
@@ -52,7 +52,7 @@ set -e
 echo "" > coverage.txt
 
 for d in $(go list ./... | grep -v vendor); do
-    go test -coverprofile=profile.out -covermode=atomic $d
+    go test -race -coverprofile=profile.out -covermode=atomic $d
     if [ -f profile.out ]; then
         cat profile.out >> coverage.txt
         rm profile.out
