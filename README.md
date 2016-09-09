@@ -27,7 +27,8 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
 ```
 
-> All other CI you can simply run `bash <(curl -s https://codecov.io/bash)`.
+> - All other CI you can simply run `bash <(curl -s https://codecov.io/bash)`.
+> - `-race` is a suggestion, not required. Learn more at https://blog.golang.org/race-detector
 
 ## Private Repos
 > Set `CODECOV_TOKEN` in your environment variables.
