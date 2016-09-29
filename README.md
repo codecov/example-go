@@ -35,13 +35,10 @@ after_success:
 
 Add to your `.travis.yml` file.
 ```yml
-env:
-  global:
-    - CODECOV_TOKEN=:uuid-repo-token
-
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -t uuid-repo-token
 ```
+> Or you can set the environment variable `CODECOV_TOKEN=uuid-repo-token` and remove the `-t` flag
 
 ## Caveat: Multiple files
 > If you see this `cannot use test profile flag with multiple packages` then use this shell template to execute your tests and store coverage output
