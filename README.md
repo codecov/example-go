@@ -59,7 +59,6 @@ Then run this file as your test (ex. `./test.sh`)
 
 > Reference http://stackoverflow.com/a/21142256/2055281
 
-
 View source and learn more about [Codecov Global Uploader][4]
 
 Need help? Contact support https://github.com/codecov/support
