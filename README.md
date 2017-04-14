@@ -21,7 +21,7 @@ script:
   - go test -race -coverprofile=coverage.txt -covermode=atomic
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - include_cov=coverage.txt bash <(curl -s https://codecov.io/bash)
 ```
 
 > - All other CI you can simply run `bash <(curl -s https://codecov.io/bash)`.
