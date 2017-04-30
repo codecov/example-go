@@ -12,7 +12,8 @@ Add to your `.travis.yml` file.
 language: go
 
 go:
-  - 1.7
+  - 1.8.x
+  - tip
 
 before_install:
   - go get -t -v ./...
