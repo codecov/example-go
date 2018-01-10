@@ -1,11 +1,12 @@
-[Codecov][1] Go Example
-=======================
+
+# [Codecov][1] Go Example
 
 This repository serves as an **example** on how to use [Codecov Global][4] for Go.
 
 > Note: use `-covermode=atomic` or `-covermode=count` to show how many times a statement was executed.
 
-# Travis CI
+## Builld
+### Travis Setup
 
 Add to your `.travis.yml` file.
 ```yml
@@ -28,7 +29,10 @@ after_success:
 > - All other CI you can simply run `bash <(curl -s https://codecov.io/bash)`.
 > - `-race` is a suggestion, not required. Learn more at https://blog.golang.org/race-detector
 
-## Private Repos
+
+
+## Caveats
+### Private Repos
 > Set `CODECOV_TOKEN` in your environment variables.
 
 Add to your `.travis.yml` file.
@@ -37,8 +41,7 @@ after_success:
   - bash <(curl -s https://codecov.io/bash) -t uuid-repo-token
 ```
 > Or you can set the environment variable `CODECOV_TOKEN=uuid-repo-token` and remove the `-t` flag
-
-## Caveat: Multiple files
+### Multiple files
 > If you see this `cannot use test profile flag with multiple packages` then use this shell template to execute your tests and store coverage output
 
 ```shell
@@ -60,9 +63,18 @@ Then run this file as your test (ex. `./test.sh`)
 
 > Reference http://stackoverflow.com/a/21142256/2055281
 
-View source and learn more about [Codecov Global Uploader][4]
 
-Need help? Contact support https://github.com/codecov/support
+## Support
+### Contact
+- Intercom (in-app messanger)
+- Email: support@codecov.io
+- Slack: slack.codecov.io
+- [gh/codecov/support](https://github.com/codecov/support)
+
+1. More documentation at https://docs.codecov.io
+2. Configure codecov through the `codecov.yml`  https://docs.codecov.io/docs/codecov-yaml
+3. View source and learn more about [Codecov Global Uploader][4]
+
 
 [1]: https://codecov.io/
 [4]: https://github.com/codecov/codecov-bash
