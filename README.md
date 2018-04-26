@@ -62,7 +62,7 @@ Then run this file as your test (ex. `./test.sh`)
 
 View source and learn more about [Codecov Global Uploader][4]
 
-Need help? Contact support https://github.com/codecov/support
+We are happy to help if you have any questions. Please contact email our Support at [support@codecov.io](mailto:support@codecov.io)
 
 [1]: https://codecov.io/
 [4]: https://github.com/codecov/codecov-bash
