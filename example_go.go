@@ -27,3 +27,5 @@ func CoveredTest(num int) int {
     x := num + num
     return x
 }
+
+func UncoveredSimpleTest() int { return 0 }
