@@ -17,13 +17,13 @@ func GetResult() string {
     return result
 }
 
-func UncoveredTest() string {
+func UncoveredTest() int {
     x := 1
     x = x + 1
     return x
 }
 
-func CoveredTest(num int) string {
+func CoveredTest(num int) int {
     x := num + num
     return x
 }
