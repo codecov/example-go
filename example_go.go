@@ -18,12 +18,12 @@ func GetResult() string {
 }
 
 func UncoveredTest() string {
-    x = 1
+    x := 1
     x = x + 1
     return x
 }
 
 func CoveredTest(num int) string {
-    x = num + num
+    x := num + num
     return x
 }
