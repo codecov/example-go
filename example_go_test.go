@@ -12,6 +12,7 @@ var _ = Describe("Example", func() {
                 Setup()
                 Expect(GetResult()).To(Equal(":)"))
                 Expect(CoveredTest(1)).To(Equal(2))
+                Expect(CoveredSimpleTest()).To(Equal(1))
             })
         })
     })

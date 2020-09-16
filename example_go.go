@@ -29,3 +29,5 @@ func CoveredTest(num int) int {
 }
 
 func UncoveredSimpleTest() int { return 0 }
+
+func CoveredSimpleTest() int { return 1 }
