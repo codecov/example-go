@@ -7,7 +7,6 @@ var result string
 func Setup() {
     // Comment
     result = awesome.Smile()
-
 }
 
 func GetResult() string {
