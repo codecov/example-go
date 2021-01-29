@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/go:1.15
+    steps:
+      - checkout
+      - run:
+          name: Run tests and coverage
+          run: go test -race -coverprofile=coverage.txt -covermode=atomic
+      - run:
+          name: Upload coverage to Codecov
+          run: bash <(curl -s https://codecov.io/bash)
