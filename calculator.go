@@ -1,10 +1,10 @@
-package Calculator
+package calculator
 
-func add(x int, y int) int {
+func Add(x, y int) int {
 	return x + y
 }
 
-func subtract(x int, y int) int {
+func Subtract(x, y int) int {
 	/*
 	   large comment
 	*/

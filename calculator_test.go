@@ -1,10 +1,9 @@
-package Calculator
+package calculator
 
 import "testing"
 
-func TestCalculatorAdd(t *testing.T) {
-	result := add(1, 2)
-	if result != 3 {
-		t.Errorf("add method produced wrong result. expected: %d, got: %d", 3, result)
-	}
+func TestAdd(t *testing.T) {
+  if got, want := Add(1, 2), 3; got != want {
+    t.Errorf("add method produced wrong result. expected: %d, got: %d", want, got)
+  }
 }
