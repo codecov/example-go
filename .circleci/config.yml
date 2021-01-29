@@ -12,3 +12,9 @@ jobs:
       - run:
           name: Upload coverage to Codecov
           run: bash <(curl -s https://codecov.io/bash)
+
+workflow:
+  version: 2.1
+  build-test:
+    jobs:
+      - build
