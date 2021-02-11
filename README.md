@@ -22,7 +22,7 @@ before_install:
   - go get -t -v ./...
 
 script:
-  - go test -race -coverprofile=coverage.txt -covermode=atomic
+  - go test ./... -race -coverprofile=coverage.txt -covermode=atomic
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
@@ -30,6 +30,28 @@ after_success:
 
 > - All other CI you can simply run `bash <(curl -s https://codecov.io/bash)`.
 > - `-race` is a suggestion, not required. Learn more at https://blog.golang.org/race-detector
+
+### Makefile setup
+```
+GO111MODULE = on
+CODECOV_TOKEN="YOUR_TOKEN_HERE"
+
+deps:
+	go mod download
+
+format:
+	go fmt ./...
+
+test: deps format #it's recommended to run go fmt for consistency in coverage
+	go test ./... -race -coverprofile=coverage.txt -covermode=atomic
+
+codecov: test
+	CODECOV_TOKEN=$(CODECOV_TOKEN) bash -c 'bash <(curl -s https://codecov.io/bash)'
+
+```
+
+With this makefile, you can run `make codecov` to run your tests and have the results uploaded to codecov.
+
 
 ### Multiple files
 > If you see this `cannot use test profile flag with multiple packages` then use this shell template to execute your tests and store coverage output
@@ -54,6 +76,7 @@ Then run this file as your test (ex. `./test.sh`)
 > Reference http://stackoverflow.com/a/21142256/2055281
 
 ## Caveats
+
 ### Private Repo
 Repository tokens are required for (a) all private repos, (b) public repos not using Travis-CI, CircleCI or AppVeyor. Find your repository token at Codecov and provide via appending `-t <your upload token>` to you where you upload reports.
 
