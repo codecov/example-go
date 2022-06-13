@@ -7,3 +7,9 @@ func TestAdd(t *testing.T) {
 		t.Errorf("add method produced wrong result. expected: %d, got: %d", want, got)
 	}
 }
+
+func TestSubtract(t *testing.T) {
+	if got, want := Subtract(3, 2), 1; got != want {
+		t.Errorf("Subtract method produced wrong result. expected: %d, got: %d", want, got)
+	}
+}
