@@ -5,12 +5,15 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/go:1.18
+      - image: cimg/node:current
     steps:
       - checkout
       - run:
+          name: Install dependencies
+          command: npm install
+      - run:
           name: Run tests and collect coverage
-          command: go test -race -coverprofile=coverage.txt -covermode=atomic
+          command: npm run test
       - codecov/upload
 
 workflow:
