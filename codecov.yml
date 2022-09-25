@@ -1,0 +1,16 @@
+coverage:
+  branch: main
+  max_report_age: off
+  require_ci_to_pass: yes
+  status:
+    project:
+      default:
+        target: 95%
+
+comment:
+  layout: "reach, diff, flags, files"
+  behavior: default
+  require_changes: false
+  require_base: yes
+  require_head: yes
+  branches: null
