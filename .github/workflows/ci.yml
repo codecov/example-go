@@ -1,6 +1,6 @@
 name: Test and coverage
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
@@ -16,3 +16,5 @@ jobs:
         run: go test -race -coverprofile=coverage.txt -covermode=atomic
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
