@@ -1,5 +1,5 @@
 # [Codecov](https://codecov.io) Go Example
-[![codecov](https://codecov.io/gh/codecov/example-go/branch/main/graph/badge.svg?token=tNKcOjlxLo)](https://codecov.io/gh/codecov/example-go)
+[![codecov](https://codecov.io/gh/DeepakBomjan/example-go-codecov/branch/check-codecov/graph/badge.svg?token=C3VDC3YRI6)](https://codecov.io/gh/DeepakBomjan/example-go-codecov)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcodecov%2Fexample-go.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcodecov%2Fexample-go?ref=badge_shield)
 
 This example repository shows how Codecov can be integrated with a simple go project. It uses **GitHub Actions** and **CircleCI** as CI/CD providers and **go** as the coverage provider.
