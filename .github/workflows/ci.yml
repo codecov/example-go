@@ -14,8 +14,8 @@ jobs:
       - name: Run coverage
         run: go test -race -coverprofile=coverage.txt -covermode=atomic
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4-beta
+        uses: codecov/codecov-action@v3
         with:
           url: https://codecov.univer.plus
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          token: ${{ secrets.CODECOV_TOKEN }}
+       
