@@ -2,6 +2,10 @@ package calculator
 
 import "testing"
 
+
+func TestNewfmp(t *testing.T) {
+	fmt.println("11111111")
+}
 func TestAdd(t *testing.T) {
 	tables := []struct {
 		x int
