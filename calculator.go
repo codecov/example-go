@@ -1,6 +1,9 @@
 package calculator
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 func Add(x, y int) (int, error) {
 	return x + y, nil
@@ -19,4 +22,10 @@ func Divide(x, y int) (float64, error) {
 		return 0, errors.New("Cannot divide by 0")
 	}
 	return float64(x) / float64(y), nil
+}
+
+func Fmt(str string) string {
+
+	fmt.Println(str)
+	return str + "qq"
 }
