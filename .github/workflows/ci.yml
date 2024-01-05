@@ -16,7 +16,7 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          url: http://120.76.65.223:9000
+          url: http://120.76.65.223:8080
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
        
