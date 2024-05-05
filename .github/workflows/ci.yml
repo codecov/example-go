@@ -6,13 +6,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: quay.io/stackrox-io/apollo-ci:stackrox-test-0.3.69
+      image: quay.io/stackrox-io/apollo-ci:stackrox-test-0.3.61
     steps:
       - run: uname -v
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
           go-version: 'stable'
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
       - name: Gather dependencies
         run: go mod download
       - name: Run coverage
