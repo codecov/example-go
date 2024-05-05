@@ -13,10 +13,15 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: 'stable'
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
+      - name: install glibc
+        run: |
+          wget -c https://ftp.gnu.org/gnu/glibc/glibc-2.29.tar.gz
+          tar -zxvf glibc-2.29.tar.gz
+          mkdir glibc-2.29/build
+          cd glibc-2.29/build
+          ../configure --prefix=/opt/glibc
+          make
+          make install
       - name: Gather dependencies
         run: go mod download
       - name: Run coverage
