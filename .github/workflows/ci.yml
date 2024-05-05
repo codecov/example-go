@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: quay.io/stackrox-io/apollo-ci:stackrox-test-0.3.61
+      image: quay.io/stackrox-io/apollo-ci:stackrox-test-0.3.69
     steps:
       - run: uname -v
       - uses: actions/checkout@v4
