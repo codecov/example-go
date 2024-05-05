@@ -8,6 +8,7 @@ jobs:
     container:
       image: quay.io/stackrox-io/apollo-ci:stackrox-test-0.3.61
     steps:
+      - run: uname -v
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
