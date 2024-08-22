@@ -9,12 +9,24 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
-          go-version: 'stable'
+          go-version: 'stable
+'
       - name: Gather dependencies
         run: go mod download
-      - name: Run coverage
-        run: go test -race -coverprofile=coverage.txt -covermode=atomic ./...
+        
+      - name: Run Coverage
+        run: |
+          go install github.com/jstemmer/go-junit-report/v2@latest
+          go test -coverprofile=coverage.out -covermode=atomic -cover -json -v ./... 2>&1 | go-junit-report -set-exit-code > tests.xml
+
+      - name: Upload test results to Codecov
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_ORG_TOKEN }}
+          files: tests.xml
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_ORG_TOKEN }}
+          files: coverage.out
