@@ -13,8 +13,16 @@ jobs:
       - name: Gather dependencies
         run: go mod download
       - name: Run coverage
-        run: go test -race -coverprofile=coverage.txt -covermode=atomic ./...
+        run: |
+          go install github.com/jstemmer/go-junit-report/v2@latest
+          go test -coverprofile=coverage.out -covermode=atomic -cover -json -v ./... 2>&1 | go-junit-report -set-exit-code > tests.xml
+      - name: Upload test results to Codecov
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_ORG_TOKEN }}
+          files: tests.xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_ORG_TOKEN }}
+          files: coverage.out
