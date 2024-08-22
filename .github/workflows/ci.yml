@@ -12,7 +12,6 @@ jobs:
           go-version: 'stable'
       - name: Gather dependencies
         run: go mod download
-        
       - name: Run Coverage
         run: |
           go install github.com/jstemmer/go-junit-report/v2@latest
