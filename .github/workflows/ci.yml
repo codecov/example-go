@@ -10,7 +10,6 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: 'stable
-'
       - name: Gather dependencies
         run: go mod download
         
