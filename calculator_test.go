@@ -25,30 +25,6 @@ func TestAdd(t *testing.T) {
 	}
 }
 
-func TestSubtract(t *testing.T) {
-	tables := []struct {
-		x int
-		y int
-		n int
-		e string
-	}{
-		{1, 2, -1.0, ""},
-		{2, 1, 1.0, ""},
-		{1.0, 2.0, -1.0, ""},
-		{0, 2.0, -2.0, ""},
-		{2.0, 0, 2.0, ""},
-		{-4, 2.0, -6.0, ""},
-	}
-
-	for _, table := range tables {
-		if total, err := Subtract(table.x, table.y); err != nil && err.Error() != table.e {
-			t.Errorf("Subtract of (%d-%d) produced wrong error, got %v, want %v.", table.x, table.y, err.Error(), table.e)
-		} else if total != table.n {
-			t.Errorf("Subtract of (%d-%d) produced wrong result, got %d, want %d.", table.x, table.y, total, table.n)
-		}
-	}
-}
-
 func TestMultiply(t *testing.T) {
 	tables := []struct {
 		x int

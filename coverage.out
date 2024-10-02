@@ -1,0 +1,7 @@
+mode: atomic
+example-go/calculator.go:5.33,7.2 1 5
+example-go/calculator.go:9.38,11.2 1 6
+example-go/calculator.go:13.38,15.2 1 5
+example-go/calculator.go:17.40,18.12 1 4
+example-go/calculator.go:18.12,20.3 1 0
+example-go/calculator.go:21.2,21.37 1 4
