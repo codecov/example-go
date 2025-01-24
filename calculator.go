@@ -2,7 +2,9 @@ package calculator
 
 import "errors"
 
+// comment
 func Add(x, y int) (int, error) {
+	// comment
 	return x + y, nil
 }
 
