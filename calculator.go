@@ -20,3 +20,7 @@ func Divide(x, y int) (float64, error) {
 	}
 	return float64(x) / float64(y), nil
 }
+
+func TestAdd() {
+	Add(1,2)
+}
